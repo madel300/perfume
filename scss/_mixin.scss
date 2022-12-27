@@ -1,0 +1,11 @@
+@mixin breakpoints($point) {
+    @if $point == mobile {
+      @media (max-width: 767px) {
+        @content;
+      }
+    } @else if $point == medium {
+      @media (min-width: 768px) and (max-width: 992px) {
+        @content;
+      }
+    }
+  }

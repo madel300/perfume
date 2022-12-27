@@ -1,0 +1,124 @@
+@import "./scss/varbiables";
+@import "./scss/mixin";
+
+.box {
+    background-color: $cream-color;
+    margin: 30px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    box-shadow: 2px 2px 10px $dark-cyan-color;
+    border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    -ms-border-radius: $border-radius;
+    -o-border-radius: $border-radius;
+    .container{
+        background-color: $White-color;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        align-items: center;
+        overflow: hidden;
+        border-radius: $border-radius;
+        -webkit-border-radius: $border-radius;
+        -moz-border-radius: $border-radius;
+        -ms-border-radius: $border-radius;
+        -o-border-radius: $border-radius;
+        @include breakpoints(mobile) {
+            grid-template-columns: 100%;
+        }
+        @include breakpoints(medium) {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+        .larg {
+            width: 100%;
+            @include breakpoints(mobile) {
+                display: none;
+            }
+        }
+        .mobile {
+            display: none;
+            width: 100%;
+            @include breakpoints(mobile) {
+                display: inline;
+            }
+        }
+        .content {
+            %pragraf-font {
+                color: $Dark-grayish-blue-color;
+                line-height: 1.7;
+                font: {
+                    weight: normal;
+                    size: 14px;
+                    family: 'Montserrat', sans-serif;
+                }
+            }
+            padding: 25px;
+            @include breakpoints(mobile) {
+                padding: 15px;
+            }
+            .main-title {
+                @extend %pragraf-font;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+            }
+            .title {
+                text-transform: capitalize;
+                margin: 25px 0;
+                color: $Very-dark-blue-color;
+                line-height: 1;
+                font: {
+                    size: 30px;
+                    family: 'Fraunces', serif;
+                }
+            }
+            .text {
+                @extend %pragraf-font;
+            }
+            .price {
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                .discount {
+                    font: {
+                        size: 30px;
+                        weight: bold;
+                        family: 'Fraunces', serif;
+                    }
+                    color: $dark-cyan-color;
+                    margin-right: 15px;
+                }
+                .old-price {
+                    font: {
+                        size: 14px;
+                        weight: normal;
+                        family: 'Montserrat', sans-serif;
+                    }
+                    text-decoration: line-through;
+                    color: $dark-cyan-color;
+                }
+            }
+            button {
+                background-color: $dark-cyan-color;
+                width: 100%;
+                color: $White-color;
+                padding: 15px 0;
+                border: none;
+                border-radius: $border-radius;
+                -webkit-border-radius: $border-radius;
+                -moz-border-radius: $border-radius;
+                -ms-border-radius: $border-radius;
+                -o-border-radius: $border-radius;
+                svg {
+                    margin-right: 10px;
+                    font-size: 14px;
+                }
+                &:hover {
+                    background-color: $Very-dark-blue-color;
+                    cursor:pointer;
+                }
+            }
+        }
+    }
+}
